@@ -5,10 +5,11 @@ import ActionSection from '@/Components/ActionSection.vue';
 import ConfirmationModal from '@/Components/ConfirmationModal.vue';
 import DangerButton from '@/Components/DangerButton.vue';
 import SecondaryButton from '@/Components/SecondaryButton.vue';
+import type { Team } from '@/types';
 
-const props = defineProps({
-    team: Object,
-});
+const props = defineProps<{
+    team: Team;
+}>();
 
 const confirmingTeamDeletion = ref(false);
 const form = useForm({});
@@ -18,7 +19,7 @@ function confirmTeamDeletion() {
 }
 
 function deleteTeam() {
-    form.delete(route('teams.destroy', props.team), {
+    form.delete(route('teams.destroy', [props.team]), {
         errorBag: 'deleteTeam',
     });
 }
@@ -61,7 +62,7 @@ function deleteTeam() {
                     </SecondaryButton>
 
                     <DangerButton
-                        type="button"
+                        type="submit"
                         class="ms-3"
                         :class="{ 'opacity-25': form.processing }"
                         :disabled="form.processing"

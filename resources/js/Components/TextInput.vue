@@ -2,9 +2,9 @@
 import { onMounted, ref } from 'vue';
 import type { Nullable } from '@/types';
 
-defineProps({
-    modelValue: String,
-});
+defineProps<{
+    modelValue: string;
+}>();
 
 defineEmits(['update:modelValue']);
 

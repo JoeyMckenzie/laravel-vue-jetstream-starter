@@ -5,9 +5,9 @@ import AuthenticationCard from '@/Components/AuthenticationCard.vue';
 import AuthenticationCardLogo from '@/Components/AuthenticationCardLogo.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 
-const props = defineProps({
-    status: String,
-});
+const props = defineProps<{
+    status: string;
+}>();
 
 const form = useForm({});
 

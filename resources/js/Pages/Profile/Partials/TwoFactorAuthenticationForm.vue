@@ -11,9 +11,9 @@ import PrimaryButton from '@/Components/PrimaryButton.vue';
 import SecondaryButton from '@/Components/SecondaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 
-const props = defineProps({
-    requiresConfirmation: Boolean,
-});
+const props = defineProps<{
+    requiresConfirmation: boolean;
+}>();
 
 const page = usePage();
 const enabling = ref(false);
