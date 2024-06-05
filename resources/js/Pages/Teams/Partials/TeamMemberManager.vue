@@ -13,7 +13,7 @@ import PrimaryButton from '@/Components/PrimaryButton.vue';
 import SecondaryButton from '@/Components/SecondaryButton.vue';
 import SectionBorder from '@/Components/SectionBorder.vue';
 import TextInput from '@/Components/TextInput.vue';
-import type { JetstreamTeamPermissions, Nullable, Role, Team, TeamInvitation, User, UserMembership } from '@/types';
+import type { JetstreamTeamPermissions, Nullable, Role, Team, TeamInvitation, UserMembership } from '@/types';
 
 const props = defineProps<{
     team: Team & {
