@@ -1,0 +1,16 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - vendor/phpstan/phpstan-strict-rules/rules.neon
+
+parameters:
+    level: max
+
+    paths:
+        - app/
+        - routes/
+        - database/
+
+    reportMaybesInPropertyPhpDocTypes: false
+
+    ignoreErrors:
+        - '#Dynamic call to static method Illuminate\\Console\\Scheduling\\Event::hourly\(\).#'

@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Models\User;
 
-test('team names can be updated', function () {
+test('team names can be updated', function (): void {
     $this->actingAs($user = User::factory()->withPersonalTeam()->create());
 
     $this->put('/teams/'.$user->currentTeam->id, [

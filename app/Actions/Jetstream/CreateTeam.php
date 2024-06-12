@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Actions\Jetstream;
 
 use App\Models\Team;
@@ -10,7 +12,7 @@ use Laravel\Jetstream\Contracts\CreatesTeams;
 use Laravel\Jetstream\Events\AddingTeam;
 use Laravel\Jetstream\Jetstream;
 
-class CreateTeam implements CreatesTeams
+final class CreateTeam implements CreatesTeams
 {
     /**
      * Validate and create a new team for the given user.
@@ -32,6 +34,9 @@ class CreateTeam implements CreatesTeams
             'personal_team' => false,
         ]));
 
-        return $team;
+        /** @var Team $coercedTeam */
+        $coercedTeam = $team;
+
+        return $coercedTeam;
     }
 }
