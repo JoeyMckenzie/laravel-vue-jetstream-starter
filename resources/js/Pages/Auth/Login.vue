@@ -8,10 +8,10 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 
-defineProps({
-    canResetPassword: Boolean,
-    status: String,
-});
+defineProps<{
+    canResetPassword: boolean;
+    status: string;
+}>();
 
 const form = useForm({
     email: '',

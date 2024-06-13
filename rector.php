@@ -7,6 +7,7 @@ use Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector;
 use Rector\Config\RectorConfig;
 use Rector\Set\ValueObject\SetList;
 use Rector\TypeDeclaration\Rector\ClassMethod\AddVoidReturnTypeWhereNoReturnRector;
+use Rector\TypeDeclaration\Rector\StmtsAwareInterface\DeclareStrictTypesRector;
 
 return RectorConfig::configure()
     ->withPaths([
@@ -14,9 +15,9 @@ return RectorConfig::configure()
         __DIR__.'/bootstrap',
         __DIR__.'/config',
         __DIR__.'/public',
-        __DIR__.'/resources',
         __DIR__.'/routes',
         __DIR__.'/tests',
+        __DIR__.'/database',
     ])
     ->withSkip([__DIR__.'/bootstrap/cache'])
     ->withPhpSets(php83: true)
@@ -27,6 +28,7 @@ return RectorConfig::configure()
     ->withRules([
         AddVoidReturnTypeWhereNoReturnRector::class,
         InlineConstructorDefaultToPropertyRector::class,
+        DeclareStrictTypesRector::class,
     ])
     ->withSets([
         SetList::CODE_QUALITY,

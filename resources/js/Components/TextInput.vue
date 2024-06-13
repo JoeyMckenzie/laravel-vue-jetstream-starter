@@ -12,7 +12,7 @@ const input = ref<Nullable<HTMLInputElement>>(null);
 
 onMounted(() => {
     if (input.value?.hasAttribute('autofocus')) {
-        input.value.focus();
+        // input.value.focus();
     }
 });
 
